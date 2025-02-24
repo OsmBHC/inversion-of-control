@@ -6,6 +6,14 @@ public class MetierImpl implements IMetier {
     // Couplage faible
     private IDao dao;
 
+    // Constructeur par défaut nécessaire pour l'instanciation dynamique
+    public MetierImpl() {
+    }
+
+    public MetierImpl(IDao dao) {
+        this.dao = dao;
+    }
+
     @Override
     public double calcul() {
         double t = dao.getData();
